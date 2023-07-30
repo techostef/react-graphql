@@ -10,7 +10,9 @@ export function convertDataAnimeListToAnimeItems (data?: IDataAnimeList['Page'])
       coverImage: item.coverImage.medium,
       seasonYear: item.seasonYear,
       status: item.status,
-      episodes: item.episodes
+      episodes: item.episodes,
+      genres: item.genres,
+      meanScore: item.meanScore,
     }))
   }
 

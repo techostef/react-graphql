@@ -30,6 +30,8 @@ interface Media {
   seasonYear: number
   status: string;
   episodes: number;
+  meanScore: number;
+  genres: string[];
 }
 
 interface Title {
