@@ -6,9 +6,10 @@ import theme from "../../shared/config/theme";
 import Box from "../../shared/components/Box";
 import { safeHtml } from "../../shared/utils";
 import { BookmarkIcon } from "../../shared/assets/Bookmark";
-import ModalAddToCollection from "../../collections/components/ModalAnimeToCollection";
+import ModalAddToCollection from "./ModalAnimeToCollection";
 import { useCollections } from "../../collections/contexts/CollectionsContext";
 import { useAnimeItem } from "../../shared/contexts/useAnimeItem";
+import { MediaScreen } from "../../shared/constants/MediaScreen";
 
 function Info() {
   const { anime } = useAnimeItem();
@@ -110,14 +111,30 @@ const styles = {
   container: css({
     width: "100%",
     display: "flex",
+    [MediaScreen.tablet]: {
+      marginLeft: theme.spacing.l,
+      marginRight: theme.spacing.l,
+    },
+    [MediaScreen.mobile]: {
+      flexDirection: 'column',
+      marginLeft: theme.spacing.l,
+      marginRight: theme.spacing.l,
+    },
   }),
   box: css({
     marginLeft: theme.spacing.s,
+    [MediaScreen.mobile]: {
+      marginTop: theme.spacing.s,
+      marginLeft: 0,
+    },
   }),
   image: css({
     width: 200,
     height: 300,
     borderRadius: 4,
+    [MediaScreen.mobile]: {
+      width: '100%'
+    },
   }),
   score: css({
     width: "100%",

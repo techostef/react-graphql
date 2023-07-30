@@ -19,6 +19,7 @@ function AnimeItem({
   onClickRemove,
 }: IProps) {
   const router = useRouter();
+
   function onClick() {
     router.push(UrlPage.detail.replace("{id}", String(id)));
   }
@@ -50,14 +51,18 @@ const styles = {
     flexDirection: "column",
     cursor: "pointer",
     position: "relative",
-    [MediaScreen.mobile]: {
-      width: "fit-content",
-    },
+    [MediaScreen.mobile]: css({
+      width: '100%'
+    })
   }),
   image: css({
     width: 150,
     minWidth: 150,
     height: 215,
+    [MediaScreen.mobile]: css({
+      width: '100%',
+      maxWidth: '100%'
+    })
   }),
   label: css({
     color: theme.color.grayLight,
@@ -70,6 +75,9 @@ const styles = {
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
+    [MediaScreen.mobile]: css({
+      width: '100%'
+    })
   }),
   content: css({
     display: "flex",

@@ -6,12 +6,13 @@ import { convertDataAnimeListToAnimeItems } from "./utils";
 import theme from "../shared/config/theme";
 import Box from "../shared/components/Box";
 import Loader from "../shared/components/Loader";
+import { MediaScreen } from "../shared/constants/MediaScreen";
 
 function Home() {
   const { data, loading, onChangePage } = useAnimeList();
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1 className={styles.title}>Anime List</h1>
       <Box>
         {loading && (
@@ -23,7 +24,7 @@ function Home() {
           <AnimeList data={convertDataAnimeListToAnimeItems(data?.Page)} />
         )}
       </Box>
-      {data?.Page.pageInfo && (
+      {!loading && data?.Page.pageInfo && (
         <div className={styles.pagination}>
           <Pagination onChangePage={onChangePage} {...data?.Page.pageInfo} />
         </div>
@@ -46,6 +47,11 @@ const styles = {
     marginTop: theme.spacing.s,
     justifyContent: "flex-end",
   }),
+  container: css({
+    [MediaScreen.tablet]: {
+      padding: theme.spacing.s
+    }
+  })
 };
 
 export default Home;

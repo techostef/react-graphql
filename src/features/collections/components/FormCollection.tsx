@@ -8,6 +8,7 @@ import Button from "../../shared/components/Button";
 import theme from "../../shared/config/theme";
 import { useCollections } from "../contexts/CollectionsContext";
 import { ICollection } from "../../shared/types/collections";
+import { MediaScreen } from "../../shared/constants/MediaScreen";
 
 interface IFormNewCollection {
   name: string;
@@ -109,10 +110,18 @@ const styles = {
     display: "flex",
     alignItems: "flex-end",
     height: "fit-content",
+    [MediaScreen.mobile]: {
+      flexDirection: 'column',
+      marginLeft: theme.spacing.s,
+      marginRight: theme.spacing.s,
+    }
   }),
   input: css({
     width: "100%",
     marginRight: theme.spacing.s,
+    [MediaScreen.mobile]: {
+      marginRight: 0,
+    }
   }),
   button: css({
     marginBottom: theme.spacing.xxs,

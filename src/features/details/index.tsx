@@ -4,6 +4,7 @@ import theme from "../shared/config/theme";
 import Loader from "../shared/components/Loader";
 import Info from "./components/Info";
 import { useAnimeDetails } from "./hooks/useAnimeDetails";
+import { MediaScreen } from "../shared/constants/MediaScreen";
 
 function Details() {
   const router = useRouter();
@@ -34,6 +35,12 @@ const styles = {
   }),
   title: css({
     color: theme.color.grayLight,
+    [MediaScreen.tablet]: {
+      marginLeft: theme.spacing.l,
+    },
+    [MediaScreen.mobile]: {
+      marginLeft: theme.spacing.l,
+    },
   }),
   pagination: css({
     display: "flex",

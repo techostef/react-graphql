@@ -15,7 +15,7 @@ function AnimeList({ data, isRemoveAble, onRemove }: IProps) {
   }
   
   return (
-    <div className={styles.container}>
+    <div data-testid="anime-list" className={styles.container}>
       {data.map((anime) => (
         <AnimeItem key={anime.id} {...anime} isRemoveAble={isRemoveAble} onClickRemove={onRemove} />
       ))}

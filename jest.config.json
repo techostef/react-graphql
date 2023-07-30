@@ -1,0 +1,20 @@
+{
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "./tsconfig.test.json"
+    }
+  },
+  "preset": "ts-jest",
+  "testEnvironment": "jsdom",
+  "testMatch": [
+    "**/__tests__/*.test.tsx"
+  ],
+  "collectCoverageFrom": [
+    "!**/__tests__/**.test.tsx",
+    "!**/__tests__/mocks/**",
+    "src/**/*.{tsx, ts}"
+  ],
+  "setupFilesAfterEnv": [
+    "<rootDir>/jest/setupTest.ts"
+  ]
+}

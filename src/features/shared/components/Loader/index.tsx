@@ -3,7 +3,7 @@ import theme from "../../config/theme";
 
 function Loader () {
   return (
-    <div className={styles.loader} />
+    <div data-testid="loader" className={styles.loader} />
   )
 }
 

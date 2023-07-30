@@ -10,6 +10,7 @@ import Box from "../shared/components/Box";
 import ModalAddOrEditToCollection from "../collections/components/ModalAddOrEditCollection";
 import { PencilIcon } from "../shared/assets/Pencil";
 import ModalRemove from "./components/ModalRemove";
+import { MediaScreen } from "../shared/constants/MediaScreen";
 
 function CollectionDetails() {
   const { collection, updateName, removeAnimeOnCollection } = useCollectionDetails();
@@ -89,10 +90,22 @@ const styles = {
   }),
   title: css({
     color: theme.color.grayLight,
+    [MediaScreen.tablet]: {
+      marginLeft: theme.spacing.s
+    },
+    [MediaScreen.mobile]: {
+      marginLeft: theme.spacing.s
+    }
   }),
   image: css({
     width: 150,
     height: 150,
+    [MediaScreen.tablet]: {
+      marginLeft: theme.spacing.s
+    },
+    [MediaScreen.mobile]: {
+      marginLeft: theme.spacing.s
+    }
   }),
   box: css({
     marginTop: theme.spacing.s,

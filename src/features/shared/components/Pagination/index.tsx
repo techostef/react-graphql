@@ -21,6 +21,7 @@ function Pagination({ onChangePage, className, ...props }: IProps) {
       {/* Left navigation arrow */}
       {props.currentPage !== 1 && (
         <div
+          data-testid="prev-button"
           className={cx(styles.item, styles.arrow)}
           onClick={() => onChangePage(currentPage - 1)}
         >
@@ -54,6 +55,7 @@ function Pagination({ onChangePage, className, ...props }: IProps) {
       {/*  Right Navigation arrow */}
       {props.currentPage !== lastPage && (
         <div
+          data-testid="next-button"
           className={cx(styles.item, styles.arrow)}
           onClick={() => onChangePage(currentPage + 1)}
         >

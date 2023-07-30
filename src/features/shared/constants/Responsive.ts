@@ -1,5 +1,5 @@
 export const ResponseiveSize = {
-  desktop: 820,
-  tablet: 601,
-  mobile: 414
+  desktop: 900,
+  tablet: 451,
+  mobile: 451
 } 

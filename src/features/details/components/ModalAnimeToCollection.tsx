@@ -2,8 +2,8 @@ import { css } from "@emotion/css";
 
 import Button from "../../shared/components/Button";
 import Modal from "../../shared/components/Modal";
-import FormAddCollection from "./FormCollection";
-import CollectionsList from "./CollectionsList";
+import FormAddCollection from "../../collections/components/FormCollection";
+import CollectionsList from "../../collections/components/CollectionsList";
 import theme from "../../shared/config/theme";
 
 interface IProps {

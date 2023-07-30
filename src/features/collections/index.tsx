@@ -7,6 +7,7 @@ import CollectionsList from "./components/CollectionsList";
 import Button from "../shared/components/Button";
 import ModalAddOrEditCollection from "./components/ModalAddOrEditCollection";
 import { ICollection } from "../shared/types/collections";
+import { MediaScreen } from "../shared/constants/MediaScreen";
 
 function Home() {
   const [showModalAdd, setShowModalAdd] = useState(false);
@@ -67,6 +68,14 @@ const styles = {
     },
     ".content-list": {
       maxHeight: 'unset'
+    },
+    [MediaScreen.tablet]: {
+      marginLeft: theme.spacing.m,
+      marginRight: theme.spacing.m,
+    },
+    [MediaScreen.mobile]: {
+      marginLeft: theme.spacing.m,
+      marginRight: theme.spacing.m,
     }
   }),
 };
